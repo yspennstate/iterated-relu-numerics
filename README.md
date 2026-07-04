@@ -22,6 +22,10 @@ the two experiments that support its analytic claims.
 - `experiment_C_finite_time_diagnostics.py` — checks the finite-horizon state evolution: the
   norm halving `2^t ||x_t||^2 -> 1`, the activation density `-> 1/2`, the consecutive-step cosine
   against the arccosine-kernel orbit, and the angle law `theta_t ~ 3 pi / t`.
+- `uniform_block_gain.py` — searches for the worst-case direction of the `m`-step map by a
+  sign-feasible power iteration and reports the block gain `a_m = sup_{||x||=1} ||f^m(x)||`. It
+  finds `a_m < 1` from about `m = 6`, evidence for uniform (all-input) finite-block contraction;
+  `make_uniform_figure.py` plots it from `uniform_block_gain_snap.txt`.
 - `make_figures.py` — regenerates the figures in `figures/` from the JSON in `data/`.
 
 Each experiment writes a JSON summary to `data/` and prints a table; `RESULTS.md` records the
