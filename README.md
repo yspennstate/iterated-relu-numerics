@@ -47,3 +47,11 @@ All scripts use fixed seeds and depend only on NumPy and Matplotlib.
 
 `figures/` holds the vector PDFs used in the paper: the finite-time diagnostics, the tail-rate
 comparison against `I_alpha`, and the near-ray gain cap.
+
+## Edge-of-chaos extensions
+
+`edge_of_chaos/` holds the numerics for the multi-step signal-propagation results: general
+activations, biases, tied versus independent weights, convolutions, self-attention, and
+residual connections. See `edge_of_chaos/README.md`. The map there is
+`x -> phi(W x + b)` for a general activation, and the object of interest is the whole depth
+trajectory of the length and correlation maps rather than a single fixed point.
