@@ -67,3 +67,12 @@ grows (`1 -> 8.3` over 120 layers) while a plain ReLU network's halves. The dire
 drift depends on the configuration (random tanh residual nets decorrelate slowly, keeping
 inputs distinguishable), but the depth scale is always `1/beta^2`, against the `O(1)` scale
 of a plain ordered network (geometric rate `0.885`).
+
+## E7 — activation smoothness sets the critical exponent
+
+Five activations placed exactly at criticality (`chi1=1`), deterministic cosine maps. Kinked
+activations approach parallel as `1-c_t ~ t^{-2}` (ReLU `-1.97`, leaky `-1.96`); smooth ones
+as `t^{-1}` (erf `-1.00`, tanh `-1.01`, sin `-0.99`). The angle follows `t^{-1}` and
+`t^{-1/2}`. All five share the same multiplier `chi1=1`, so the exponent is set by the local
+geometry of the map at `c=1` (analytic for smooth phi, non-analytic arccosine term for a
+kink), not by the multiplier.

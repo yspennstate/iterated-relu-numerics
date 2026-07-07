@@ -34,9 +34,13 @@ wrong on the step derivative, which is why the ReLU family is routed through clo
   (rank collapse) under pure attention, doubly exponential in depth, the Dobrushin
   oscillation bound, and the effect of skip connections, feed-forward blocks and layer
   normalization.
-- `exp_e6_resnet_depth_scaling.py` — residual blocks `x + beta phi(W x)`: the `1 - c_t`
-  curves collapsing onto one profile under `t -> beta^2 t`, the depth scale `1/beta^2`, and
-  the contrast between residual (polynomial) and plain (geometric) decay.
+- `exp_e6_resnet_depth_scaling.py` — residual blocks `x + beta phi(W x)`: the cosine curves
+  collapsing onto one profile under `t -> beta^2 t`, the depth scale `1/beta^2`, and the
+  contrast between residual (`1/beta^2` scale) and plain (`O(1)` scale) evolution.
+- `exp_e7_activation_smoothness.py` — at criticality (`chi1=1` for all), kinked activations
+  (ReLU, leaky) approach parallel as `t^{-2}` while smooth ones (erf, tanh, sin) approach as
+  `t^{-1}`: the critical exponent is set by the activation's smoothness, not by the
+  multiplier. Deterministic (no finite-N simulation).
 
 ## Usage
 
@@ -48,6 +52,7 @@ python exp_e3_bias_criticality.py
 python exp_e4_cnn_signal_propagation.py
 python exp_e5_attention_rank_collapse.py
 python exp_e6_resnet_depth_scaling.py
+python exp_e7_activation_smoothness.py
 ```
 
 Each script writes a JSON summary to `data/`, prints markdown tables, and draws a vector PDF
