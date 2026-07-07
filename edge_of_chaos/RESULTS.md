@@ -76,3 +76,11 @@ as `t^{-1}` (erf `-1.00`, tanh `-1.01`, sin `-0.99`). The angle follows `t^{-1}`
 `t^{-1/2}`. All five share the same multiplier `chi1=1`, so the exponent is set by the local
 geometry of the map at `c=1` (analytic for smooth phi, non-analytic arccosine term for a
 kink), not by the multiplier.
+
+## E8 — depth-to-align: whole map vs one-step prediction
+
+Layers to drive two inputs from cosine 0.2 to 0.9, true (iterate the exact cosine map) vs the
+one-step surrogate `log(eps/(1-c0))/log(chi1)`: tanh chi1=0.5 -> 3 vs 3.0; 0.7 -> 6 vs 5.8;
+0.85 -> 12 vs 12.8; 0.95 -> 27 vs 40.5 (surrogate over by 50%); ReLU angle-critical (chi1=1)
+-> 12 vs infinity. The surrogate fails worse toward the edge of chaos and qualitatively at
+criticality; only the full map gives the trajectory.

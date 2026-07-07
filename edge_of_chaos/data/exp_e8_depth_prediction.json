@@ -1,0 +1,55 @@
+{
+ "c0": 0.2,
+ "rows": [
+  {
+   "name": "tanh (chi1=0.5)",
+   "chi1": 0.5,
+   "T_true_0.9": 3,
+   "t_pred_0.9": 3.0,
+   "ratio_0.9": 1.0,
+   "T_true_0.99": 7,
+   "t_pred_0.99": 6.3,
+   "ratio_0.99": 0.9
+  },
+  {
+   "name": "tanh (chi1=0.7)",
+   "chi1": 0.7,
+   "T_true_0.9": 6,
+   "t_pred_0.9": 5.8,
+   "ratio_0.9": 0.97,
+   "T_true_0.99": 13,
+   "t_pred_0.99": 12.3,
+   "ratio_0.99": 0.95
+  },
+  {
+   "name": "tanh (chi1=0.85)",
+   "chi1": 0.85,
+   "T_true_0.9": 12,
+   "t_pred_0.9": 12.8,
+   "ratio_0.9": 1.07,
+   "T_true_0.99": 26,
+   "t_pred_0.99": 27.0,
+   "ratio_0.99": 1.04
+  },
+  {
+   "name": "tanh (chi1=0.95)",
+   "chi1": 0.95,
+   "T_true_0.9": 27,
+   "t_pred_0.9": 40.5,
+   "ratio_0.9": 1.5,
+   "T_true_0.99": 69,
+   "t_pred_0.99": 85.4,
+   "ratio_0.99": 1.24
+  },
+  {
+   "name": "ReLU (angle-critical)",
+   "chi1": 1.0,
+   "T_true_0.9": 12,
+   "t_pred_0.9": null,
+   "ratio_0.9": null,
+   "T_true_0.99": 56,
+   "t_pred_0.99": null,
+   "ratio_0.99": null
+  }
+ ]
+}

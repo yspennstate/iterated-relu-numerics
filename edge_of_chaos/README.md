@@ -41,6 +41,11 @@ wrong on the step derivative, which is why the ReLU family is routed through clo
   (ReLU, leaky) approach parallel as `t^{-2}` while smooth ones (erf, tanh, sin) approach as
   `t^{-1}`: the critical exponent is set by the activation's smoothness, not by the
   multiplier. Deterministic (no finite-N simulation).
+- `exp_e8_depth_prediction.py` — the depth to drive two inputs to a target cosine, from the
+  exact cosine map vs the one-step prediction `log(eps/(1-c0))/log(chi1)`: the surrogate
+  over-estimates the depth by more near the edge of chaos and predicts infinity at ReLU
+  criticality (true depth finite). Deterministic; quantifies why the whole map, not the
+  multiplier, gives the trajectory.
 
 ## Usage
 
@@ -53,6 +58,7 @@ python exp_e4_cnn_signal_propagation.py
 python exp_e5_attention_rank_collapse.py
 python exp_e6_resnet_depth_scaling.py
 python exp_e7_activation_smoothness.py
+python exp_e8_depth_prediction.py
 ```
 
 Each script writes a JSON summary to `data/`, prints markdown tables, and draws a vector PDF
