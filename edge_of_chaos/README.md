@@ -46,6 +46,10 @@ wrong on the step derivative, which is why the ReLU family is routed through clo
   over-estimates the depth by more near the edge of chaos and predicts infinity at ReLU
   criticality (true depth finite). Deterministic; quantifies why the whole map, not the
   multiplier, gives the trajectory.
+- `large_n_confirmation.py` — self-contained (numpy only) large-N run used on a compute
+  server: tanh at `N` up to 8192, confirming that the mean-field concentration gap keeps
+  shrinking and the tied-vs-independent difference stays at the sampling-noise floor as the
+  width grows. Reference output in `data/large_n_azure_result.json`.
 
 ## Usage
 

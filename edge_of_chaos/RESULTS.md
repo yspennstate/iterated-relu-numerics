@@ -77,6 +77,16 @@ as `t^{-1}` (erf `-1.00`, tanh `-1.01`, sin `-0.99`). The angle follows `t^{-1}`
 geometry of the map at `c=1` (analytic for smooth phi, non-analytic arccosine term for a
 kink), not by the multiplier.
 
+## Large-N confirmation (compute server)
+
+`large_n_confirmation.py`, tanh (sw2=1.5, sb2=0.05), 12 seeds, N up to 8192. The gap to the
+deterministic mean-field maps keeps shrinking with width: cosine `0.0126 -> 0.0070 -> 0.0069
+-> 0.0054` and length `0.0043 -> 0.0023 -> 0.0026 -> 0.0018` for N `= 1024, 2048, 4096, 8192`.
+The tied-vs-independent difference stays at the `~1-2%` sampling-noise floor throughout
+(`0.008, 0.019, 0.007, 0.013`), not growing -- the two models remain statistically
+indistinguishable as N grows. Confirms the `e^{-cN}` concentration and tied=independent well
+beyond the N<=2000 of the local runs.
+
 ## E8 — depth-to-align: whole map vs one-step prediction
 
 Layers to drive two inputs from cosine 0.2 to 0.9, true (iterate the exact cosine map) vs the
